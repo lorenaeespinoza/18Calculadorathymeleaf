@@ -8,8 +8,8 @@ public class CalculadoraService {
     public double calcular (int a, int b,String operacao){
         return  switch (operacao){
             case "somar" -> a + b;
-            case "subtrair" -> a + b;
-            case "multiplicar" -> a + b;
+            case "subtrair" -> a - b;
+            case "multiplicar" -> a * b;
             case "dividir" -> dividir(a,b);
             default -> throw new IllegalArgumentException("Operação inválida");
         };
@@ -18,7 +18,8 @@ public class CalculadoraService {
     private double dividir (int a, int b){
         if (b == 0){
             throw new IllegalArgumentException("Não existe divisão por zero");
+        } else {
+            return (double) a / b;
         }
-        return (double) a / b;
     }
 }
